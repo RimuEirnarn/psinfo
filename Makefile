@@ -29,7 +29,7 @@ SRCS := main.c \
 OBJS := $(patsubst %.c,$(OBJDIR)/%.o,$(SRCS))
 
 # ── rules ─────────────────────────────────────────────────────────────────────
-.PHONY: all clean rebuild
+.PHONY: all clean rebuild, check-prefix
 
 all: $(TARGET)
 
