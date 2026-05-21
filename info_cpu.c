@@ -22,7 +22,7 @@ void print_cpu(void) {
 
     GetSystemInfo(&si);
     print_separator();
-    printf("  " LABEL("CPU") "         %s\n", p);
-    printf("  " LABEL("Cores") "       %lu logical\n",
+    printf("  " LABEL("CPU") "          %s\n", p);
+    printf("  " LABEL("Cores") "        %lu logical\n",
            (unsigned long)si.dwNumberOfProcessors);
 }

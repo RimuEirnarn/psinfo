@@ -22,6 +22,6 @@ void print_memory(void) {
     const char *colour = (pct < 60) ? C_GREEN : (pct < 85) ? C_YELLOW : C_RED;
 
     print_separator();
-    printf("  " LABEL("RAM") "         %s / %s  %s[%s]" C_RESET " %d%%\n",
+    printf("  " LABEL("RAM") "          %s / %s  %s[%s]" C_RESET " %d%%\n",
            used_s, total_s, colour, bar, pct);
 }

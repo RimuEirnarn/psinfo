@@ -11,6 +11,7 @@
 CC      := gcc
 TARGET  := psinfo.exe
 OBJDIR  := obj
+PREFIX  := $(if $(RIMU_PREFIX),$(RIMU_PREFIX),$(PREFIX))
 
 CFLAGS  := -std=c11 -Wall -Wextra -O2 -D_WIN32_WINNT=0x0600
 LDFLAGS := -lws2_32 -liphlpapi -ldxgi
@@ -44,5 +45,11 @@ $(OBJDIR):
 
 clean:
 	rm -rf $(OBJDIR) $(TARGET)
+
+install: psinfo.exe
+	cp psinfo.exe $(PREFIX)\usr\bin\psinfo.exe
+
+check-prefix:
+	printf "$(PREFIX)\n"
 
 rebuild: clean all

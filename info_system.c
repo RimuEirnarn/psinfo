@@ -29,8 +29,8 @@ void print_identity(void) {
     GetComputerNameA(hostname, &hlen);
     GetUserNameA(username, &ulen);
 
-    printf("  " LABEL("Host") "        %s\n", hostname);
-    printf("  " LABEL("User") "        %s\n", username);
+    printf("  " LABEL("Host") "         %s\n", hostname);
+    printf("  " LABEL("User") "         %s\n", username);
 }
 
 void print_os(void) {
@@ -49,7 +49,7 @@ void print_os(void) {
         RegCloseKey(hKey);
     }
 
-    printf("  " LABEL("OS") "          %s  " DIM("(build %s)") "\n",
+    printf("  " LABEL("OS") "           %s  " DIM("(build %s)") "\n",
            osName, osBuild);
 }
 
@@ -61,7 +61,7 @@ void print_uptime(void) {
     unsigned mins  = (unsigned)((s % 3600) / 60);
 
     if (days > 0)
-        printf("  " LABEL("Uptime") "      %ud %02uh %02um\n", days, hours, mins);
+        printf("  " LABEL("Uptime") "       %ud %02uh %02um\n", days, hours, mins);
     else
-        printf("  " LABEL("Uptime") "      %02uh %02um\n", hours, mins);
+        printf("  " LABEL("Uptime") "       %02uh %02um\n", hours, mins);
 }
